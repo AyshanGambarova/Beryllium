@@ -1,0 +1,115 @@
+﻿@model HomeViewModel
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-carousel-fullwidth">
+                        @foreach (Slider item in Model.Sliders)
+                        {
+                        <div class="item">
+                            <a href="#">
+                                <img src="~/images/@item.Img" alt="Free Website Template by FreeHTML5.co">
+                                <div class="slider-copy">
+                                    <h2>@item.Text</h2>
+                                </div>
+                            </a>
+                        </div>
+
+                        }
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gtco-section">
+            <div class="gtco-container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+                        <h2>@Model.Section.Title</h2>
+                        <p>@Model.Section.Text</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="owl-carousel owl-carousel-carousel">
+                            @foreach (Work item in Model.Works)
+                            {
+                            <div class="item">
+                                <div class="gtco-item">
+                                    <a href="/Search/Index"><img src="~/images/@item.Img" alt="" class="img-responsive"></a>
+                                    <h2><a href="#">@item.Subtitle</a></h2>
+                                    <p class="role">@item.Title</p>
+                                </div>
+                            </div>
+
+                            }
+
+                        </div>
+                    </div>  
+
+                </div>
+            </div>
+        </div>
+        <div class="gtco-section">
+            <div class="gtco-container">
+                <div class="row">
+                    <div class="col-md-6 gtco-news">
+                        <h2>News</h2>
+                        <ul>
+                            @foreach (News item in Model.News)
+                            {
+                            <li>
+                                <a href="#">
+                                    <span class="post-date">@item.Date</span>
+                                    <h3>@item.Title</h3>
+                                    <p>@item.Text</p>
+                                </a>
+                            </li>
+                            }
+                        </ul>
+                        <p><a href="/News/Index" class="btn btn-sm btn-special">More News</a></p>
+                    </div>
+               
+                    <div class="col-md-5 col-md-push-1 gtco-testimonials">
+                        <h2>Testimonials</h2>
+                        @foreach (Testimonial item in Model.Testimonials)
+                        {
+                            <blockquote>
+                                <p>&ldquo;@item.Text&ldquo;</p>
+                                <p class="author"><cite>&mdash; @item.Author</cite></p>
+                            </blockquote>
+
+                        }
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gtco-section gto-features">
+            <div class="gtco-container">
+                <div class="row">
+                    @foreach (Feature item in Model.Features)
+                    {
+
+                    <div class="col-md-4">
+                        <div class="feature-left">
+                            <i class="@item.Icon"></i>
+                            <div class="copy">
+                                <h3>@item.Title</h3>
+                                <p>@item.Text</p>
+                                <p><a href="#" class="gtco-more">@item.Link</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
+
+
+
+
+
